@@ -32,7 +32,7 @@ export default function ChatRoom({ username, room, onLeave }: ChatRoomProps) {
   const [roomUsers, setRoomUsers] = useState<string[]>([]);
   const [typingUsers, setTypingUsers] = useState<string[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const typingTimeoutRef = useRef<NodeJS.Timeout>();
+  const typingTimeoutRef = useRef<NodeJS.Timeout>(undefined);
 
   useEffect(() => {
     const newSocket = io(SERVER_URL);
